@@ -16,7 +16,7 @@ def api():
         print(request.json)
         response = openai.Completion.create(
     model="text-davinci-003",
-    prompt="Recommend the best doctor for a client from this list[\"Gynacolegist\",\"General Physician\", \"Ortho\",\"Ent\"] and return as a json file, like{ \n\"doctorrec\" : actual recommended doctor\n} if the message is {prompt}\"n\"\n\n\n{\n\"doctorrec\" : \"Gynacolegist\"\n}".format(prompt=),
+    prompt="Recommend the best doctor for a client from this list[\"Gynacolegist\",\"General Physician\", \"Ortho\",\"Ent\"] and return as a json file, like{ \n\"doctorrec\" : actual recommended doctor\n} if the message is {prompt}\"n\"\n\n\n{\n\"doctorrec\" : \"Gynacolegist\"\n}".format(prompt=request.json),
     temperature=1,
     max_tokens=256,
     top_p=1,
