@@ -1,6 +1,5 @@
 import os
 from langchain.llms import OpenAI
-import streamlit as st
 from langchain.document_loaders import PyPDFLoader
 from langchain.vectorstores import Chroma
 from langchain.agents.agent_toolkits import (
@@ -9,7 +8,7 @@ from langchain.agents.agent_toolkits import (
     VectorStoreInfo
 )
 
-os.environ['OPENAI_API_KEY'] = ''
+os.environ['OPENAI_API_KEY'] = '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'
 
 llm = OpenAI(temperature=0.1, verbose=True)
 
