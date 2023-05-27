@@ -20,7 +20,7 @@ const Landing = () => {
       <div className="signin">
         <button className="login-btn">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu1PJmT_THldF0n5APcmt9p10utgu6KSw4cH2fQ5Xhpw&s" alt="" />
-          <h3>Sign in with Google.</h3>
+          <h3>Sign in as client.</h3>
           
         </button>
       </div>
