@@ -6,7 +6,7 @@ const Landing = () => {
   return (
     <div className="calm">
       <div className="heading">
-        <h1>calm.</h1>
+        <h1>⚕️calm.</h1>
       </div>
 
       <div className="subs">
@@ -14,7 +14,7 @@ const Landing = () => {
       </div>
       <div className="senti">
         <p>
-          Where patient care meets cutting edge tecnology.
+          Where patient care meets cutting edge technology.
         </p>
       </div>
       <div className="signin">
