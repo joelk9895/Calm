@@ -1,7 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ClientDashboard.css";
 
 const ClientDashboard = () => {
+  const [responseData, setResponseData] = useState(null);
+  const [formData, setFormData] = useState({});
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch("http://127.0.0.1:8080/list", {
+      method: "POST",
+      body: formData,
+      headers: {
+        "Content-Type": "application/json",
+        "Allow-Access-Control-Origin": "*",
+        "no-cors": true,
+      },
+    });
+    const data = await response.json();
+    setResponseData(data);
+    console.log(data);
+  };
+
   return (
     <div className="">
       <div className="clientdashboard">
@@ -22,17 +47,18 @@ const ClientDashboard = () => {
             </a>
           </div>
           <div className="ai">
-            <form className="ai-form" action="" method="post">
+            <div className="ai-response">{responseData}</div>
+            <form className="ai-form" onSubmit={handleSubmit}>
               <label htmlFor="ai">Find your best Doctor</label>
               <textarea
                 type="textarea"
-                name="ai"
+                name="prompt"
                 id="ai"
                 placeholder="Enter your symptoms"
+                value={formData.prompt}
+                onChange={handleChange}
               />
-              <button type="submit" value="Submit">
-                Submit
-              </button>
+              <button type="submit">Submit</button>
             </form>
           </div>
         </div>

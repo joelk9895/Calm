@@ -12,6 +12,14 @@
   text-transform: lowercase;
   color: white;
 }
+.ai-response {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  padding-top: 10%;
+}
 .client {
   display: flex;
   width: 100%;

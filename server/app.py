@@ -1,26 +1,31 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import os
 import openai
 
-openai.api_key = ""
+openai.api_key = "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"
 
 
 app = Flask(__name__)
-CORS(app)
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 
-@app.route('/doctorrequest', methods=['POST'])
+@app.route('/list', methods=['POST'])
 def api():
-    if request.method == 'POST':
-        print(request.json)
-        response = openai.Completion.create(
-    model="text-davinci-003",
-    prompt="Recommend the best doctor for a client from this list[\"Gynacolegist\",\"General Physician\", \"Ortho\",\"Ent\"] and return as a json file, like{ \n\"doctorrec\" : actual recommended doctor\n} if the message is {prompt}\"n\"\n\n\n{\n\"doctorrec\" : \"Gynacolegist\"\n}".format(prompt=request.json),
-    temperature=1,
-    max_tokens=256,
-    top_p=1,
-    frequency_penalty=0,
-    presence_penalty=0
-)
-        return jsonify(request.json)
+    data = request.form
+    print(data)
+    response = openai.Completion.create(
+        model="text-davinci-003",
+        prompt="Generate a possible cause for this symptoms {prompt} also warn the user that this is a AI Generated and recommend to consult a doctor on calm website also recommend what type fo doctor to see".format(
+            prompt=data.get('prompt')),
+        temperature=1,
+        max_tokens=512,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0
+    )
+    print(data)
+    return jsonify(response["choices"][0]["text"])
+
+
+if __name__ == '__main__':
+    app.run(debug=True, port=8080)
