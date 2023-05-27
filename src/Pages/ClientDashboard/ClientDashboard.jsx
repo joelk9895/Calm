@@ -31,26 +31,15 @@ const ClientDashboard = () => {
     <div className="">
       <div className="clientdashboard">
         <div className="client">
-          <div className="sidebar">
-            <h1>Calm</h1>
-            <a href="http://gogle" target="_blank" rel="noopener noreferrer">
-              Home
-            </a>
-            <a href="http://gogle" target="_blank" rel="noopener noreferrer">
-              Home
-            </a>
-            <a href="http://gogle" target="_blank" rel="noopener noreferrer">
-              Home
-            </a>
-            <a href="http://gogle" target="_blank" rel="noopener noreferrer">
-              Home
-            </a>
+          <div className="head">
+          <h1>⚕️calm</h1>
+          </div>
+          <div className="label"><p>Find your best Doctor.</p>
           </div>
           <div className="ai">
             <div className="ai-response">{responseData}</div>
             <form className="ai-form" onSubmit={handleSubmit}>
-              <label htmlFor="ai">Find your best Doctor</label>
-              <textarea
+              <textarea 
                 type="textarea"
                 name="prompt"
                 id="ai"
