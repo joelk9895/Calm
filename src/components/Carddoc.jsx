@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 import React from "react";
 import { Link } from "react-router-dom";
+=======
+import React, { useState } from "react";
+>>>>>>> 7285a105c0fe3b05475a15bf0c1d50c32ad27b40
 function Carddoc(props)
 
 {
+    const [paid, setpaid] = useState(false)
+    const handlepay=()=>{
+        setpaid(true)
+    }
     return(
         <div className="card">
             <div className="forpic">
@@ -14,9 +22,15 @@ function Carddoc(props)
             <p>{props.specialization}</p>
             <p>{props.experience} years of experience</p>
             <p>{props.contact}</p>
+<<<<<<< HEAD
             <Link to="/clientmeeting">
             <button>
                 Pay now
+=======
+            {paid ?props.link:""}
+            <button onClick={handlepay}>
+                {paid ? "Paid" :"Pay Now"}
+>>>>>>> 7285a105c0fe3b05475a15bf0c1d50c32ad27b40
             </button>
             </Link>
             </div>
