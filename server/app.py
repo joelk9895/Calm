@@ -1,6 +1,10 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import openai
+import pickle
+import numpy as np
+
+from sklearn.preprocessing import StandardScaler
 
 openai.api_key = "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"
 
@@ -25,6 +29,23 @@ def api():
     )
     print(data)
     return jsonify(response["choices"][0]["text"])
+
+
+model = pickle.load(open("model.pkl", "rb"))
+
+
+@app.route('/list2', methods=['POST'])
+def api2():
+    data = request.form
+
+    new = StandardScaler()
+    array = [data['age'], data['sex'], data['BMI'], data['BP'], data['TC'],
+             data['LDL'], data['HDL'], data['TCH'], data['LTG'], data['Glucose']]
+    array1 = np.array(array, dtype=np.float64)
+    val = new.fit_transform(array1.reshape(-1, 1))
+    print(data)
+    pred = model.predict(val.reshape(1, -1))
+    return jsonify(pred.tolist())
 
 
 if __name__ == '__main__':

@@ -37,7 +37,6 @@ const Landing = () => {
       });
   }
 
-<<<<<<< HEAD
 
   async function handleSignInDoc() {
 
@@ -70,8 +69,6 @@ const Landing = () => {
   }
 
 
-=======
->>>>>>> 798f8f1 (my)
   return (
     <div className="calm">
       <div className="heading">
@@ -89,7 +86,6 @@ const Landing = () => {
       </div>
       <div className="signin">
         <button className="login-btn" onClick={handleSignIn}>
-<<<<<<< HEAD
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu1PJmT_THldF0n5APcmt9p10utgu6KSw4cH2fQ5Xhpw&s" alt="" />
           <p>Sign in as client.</p>
           
@@ -109,15 +105,6 @@ const Landing = () => {
         </button>
       </div>
 
-=======
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu1PJmT_THldF0n5APcmt9p10utgu6KSw4cH2fQ5Xhpw&s"
-            alt=""
-          />
-          <h3>Sign in as client.</h3>
-        </button>
-      </div>
->>>>>>> 798f8f1 (my)
     </div>
   );
 };
