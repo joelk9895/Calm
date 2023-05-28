@@ -53,9 +53,11 @@ const Patientdet = () => {
     })
       .then((response) => response.json())
       .then((data) => {
+        setRes(data);
         // Handle the response from the server
         console.log(data);
         setRes(data)
+        localStorage.setItem("responseml", JSON.stringify(data));
       })
       .catch((error) => {
         // Handle any errors

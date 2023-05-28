@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./DoctorMeeting.css";
 import { getDatabase, ref, onValue, off } from "firebase/database";
-import { app } from '../firebase/firebase';
+import { app } from "../firebase/firebase";
 
 const DoctorMeeting = () => {
   const [heartRate, setHeartRate] = useState("");
@@ -11,15 +11,19 @@ const DoctorMeeting = () => {
     const db = getDatabase(app);
     const pulseRef = ref(db, "main");
 
-    onValue(pulseRef, (snapshot) => {
+    onValue(
+      pulseRef,
+      (snapshot) => {
         const data = snapshot.val();
         if (data) {
           setHeartRate(data.pulse);
           setTemperature(data.temp);
         }
-    }, {
-      onlyOnce: false 
-    });
+      },
+      {
+        onlyOnce: false,
+      }
+    );
 
     return () => {
       // Clean up the event listener when the component unmounts
@@ -41,7 +45,8 @@ const DoctorMeeting = () => {
         </div>
         <div className="rightdatabar">
           <div className="leftdatabar1">
-            <h1>Patient Name</h1>
+            <h1>Joel</h1>
+            {localStorage.getItem("responseml")}
           </div>
           <div className="heartrate sidecar">
             <h3>Heart Rate</h3>
