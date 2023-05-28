@@ -12,11 +12,11 @@ const DoctorMeeting = () => {
     const pulseRef = ref(db, "main");
 
     onValue(pulseRef, (snapshot) => {
-      const data = snapshot.val();
-      if (data) {
-        setHeartRate(data.pulse);
-        setTemperature(data.temp);
-      }
+        const data = snapshot.val();
+        if (data) {
+          setHeartRate(data.pulse);
+          setTemperature(data.temp);
+        }
     }, {
       onlyOnce: false 
     });
