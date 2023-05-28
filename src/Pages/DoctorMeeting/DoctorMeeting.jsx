@@ -18,7 +18,7 @@ const DoctorMeeting = () => {
         setTemperature(data.temp);
       }
     }, {
-      onlyOnce: false // Read the value only once when the component mounts
+      onlyOnce: false 
     });
 
     return () => {
