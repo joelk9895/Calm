@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 function Carddoc(props)
 {
+    const [paid, setpaid] = useState(false)
+    const handlepay=()=>{
+        setpaid(true)
+    }
     return(
         <div className="card">
             <div className="forpic">
@@ -12,8 +16,9 @@ function Carddoc(props)
             <p>{props.specialization}</p>
             <p>{props.experience} years of experience</p>
             <p>{props.contact}</p>
-            <button>
-                Pay now
+            {paid ?props.link:""}
+            <button onClick={handlepay}>
+                {paid ? "Paid" :"Pay Now"}
             </button>
             </div>
         </div>

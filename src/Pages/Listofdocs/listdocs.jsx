@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./listdocs.css";
 import Carddoc from "../../components/Carddoc";
 import { collection, getDocs, query } from "firebase/firestore";
-import { db } from "../firebase/firebase"; // Replace with your Firebase configuration import
+import { database } from "../firebase/firebase"; // Replace with your Firebase configuration import
 
 const ListDocs = () => {
   const [feedData, setFeedData] = useState([]);
@@ -10,7 +10,7 @@ const ListDocs = () => {
   useEffect(() => {
     // Fetch data from Firestore when the component mounts
     const fetchData = async () => {
-      const q = query(collection(db, "data"));
+      const q = query(collection(database, "data"));
       const querySnapshot = await getDocs(q);
       const data = querySnapshot.docs.map((doc) => doc.data());
       setFeedData(data);
@@ -30,7 +30,7 @@ const ListDocs = () => {
         <div className="filler"></div>
         {feedData &&
           feedData.map((data, index) => (
-            <Carddoc key={index} name={data.name} />
+            <Carddoc key={index} name={data.Name} experience={data.experience } specialization={data.specialization} link={data.meet_link} />
           ))}
       </div>
     </div>
