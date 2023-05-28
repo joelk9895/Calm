@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Patientdet.css";
+import { Link } from "react-router-dom";
 
 const Patientdet = () => {
   const [formData, setFormData] = useState({
@@ -54,6 +55,7 @@ const Patientdet = () => {
       .then((data) => {
         // Handle the response from the server
         console.log(data);
+        setRes(data)
       })
       .catch((error) => {
         // Handle any errors
@@ -152,7 +154,11 @@ const Patientdet = () => {
 
           <button type="submit">Submit</button>
         </form>
+        <div className="next">
+          <Link to="/clientdashboard"><button>next</button></Link>
+        </div>
         {res}
+        
       </div>
     </div>
   );

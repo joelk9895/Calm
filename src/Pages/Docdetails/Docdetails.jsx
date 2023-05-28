@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Docdetails.css";
 import { collection, addDoc } from "firebase/firestore";
 import { database } from "../firebase/firebase";
+import { Link } from "react-router-dom";
 
 const Docdetails = () => {
   const [name, setName] = useState("");
@@ -79,6 +80,9 @@ const Docdetails = () => {
 
           <button type="submit">Submit</button>
         </form>
+        <div className="next">
+          <Link to="/doctormeeting"><button>next</button></Link>
+        </div>
       </div>
     </div>
   );

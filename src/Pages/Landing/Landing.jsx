@@ -88,7 +88,7 @@ const Landing = () => {
         // The signed-in user info.
         const user = result.user;
         console.log(user.displayName);
-        navigate("/clientdashboard");
+        navigate("/patientdetails");
         // IdP data available using getAdditionalUserInfo(result)
         // ...
       })
@@ -114,7 +114,7 @@ const Landing = () => {
         // The signed-in user info.
         const user = result.user;
         console.log(user.displayName);
-        navigate("/docverify");
+        navigate("/docsdetails");
         // localStorage.setItem(user: user.displayName)
         // IdP data available using getAdditionalUserInfo(result)
         // ...

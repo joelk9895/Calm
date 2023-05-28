@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 function Carddoc(props)
+
 {
     return(
         <div className="card">
@@ -12,9 +14,11 @@ function Carddoc(props)
             <p>{props.specialization}</p>
             <p>{props.experience} years of experience</p>
             <p>{props.contact}</p>
+            <Link to="/clientmeeting">
             <button>
                 Pay now
             </button>
+            </Link>
             </div>
         </div>
     )

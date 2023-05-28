@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./ClientDashboard.css";
+import { Link } from "react-router-dom";
 
 const ClientDashboard = () => {
   const [responseData, setResponseData] = useState(null);
@@ -49,6 +50,9 @@ const ClientDashboard = () => {
               />
               <button type="submit">Submit</button>
             </form>
+            <div className="next">
+          <Link to="/listofdocs"><button>next</button></Link>
+        </div>
           </div>
         </div>
       </div>
