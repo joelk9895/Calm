@@ -1,0 +1,36 @@
+.patientdet {
+  background: linear-gradient(0deg, #2b1f8c 0%, #5e1fd2 65%, #9a42ff 100%);
+  min-height: 100vh;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-size: 1.5rem;
+  margin-top: 10%;
+  color: white;
+  background: #212121;
+  padding: 30px 10px;
+  border-radius: 40px;
+  margin-bottom: 10%;
+}
+input {
+  font-size: 2rem;
+  width: 50%;
+}
+select {
+  font-size: 2rem;
+  width: 50%;
+}
+button {
+  background: #212121;
+  color: pink;
+  border: none;
+  font-size: 1rem;
+  padding: 10px 20px;
+}
