@@ -12,6 +12,9 @@ function Carddoc(props)
             <p>{props.specialization}</p>
             <p>{props.experience} years of experience</p>
             <p>{props.contact}</p>
+            <button>
+                Pay now
+            </button>
             </div>
         </div>
     )

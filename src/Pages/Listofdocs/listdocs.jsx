@@ -61,7 +61,38 @@ const listdocs = () => {
             experience ="5"
         
         />  
-                           
+<Carddoc
+            name="joel"
+            specialization ="cardiologist"
+            experience ="5"
+        
+        />  
+<Carddoc
+            name="joel"
+            specialization ="cardiologist"
+            experience ="5"
+        
+        />  
+
+<Carddoc
+            name="joel"
+            specialization ="cardiologist"
+            experience ="5"
+        
+        />  
+<Carddoc
+            name="joel"
+            specialization ="cardiologist"
+            experience ="5"
+        
+        />  
+<Carddoc
+            name="joel"
+            specialization ="cardiologist"
+            experience ="5"
+        
+        />  
+                                                    
         </div>
 
 
