@@ -16,8 +16,12 @@ const Docdetails = () => {
             <input type="text" experience=""/>
             <label htmlFor="phone">phone</label>
             <input type="text" phone=""/>
+            <label htmlFor="">Specialization</label>
+            <input type="text" name="Specialization"/>
             <label htmlFor="">Medical License</label>
             <input type="File" name="Medical License"/>
+            <label htmlFor="">Upload Picture</label>
+            <input type="File" name="Profile picture"/>
 
         </form>
         </div>
