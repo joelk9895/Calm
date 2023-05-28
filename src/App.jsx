@@ -7,6 +7,7 @@ import DoctorMeeting from "./Pages/DoctorMeeting/DoctorMeeting";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Docdash from "./Pages/DoctorsDashboard/Docdash";
 import Listdocs from "./Pages/Listofdocs/listdocs";
+import Docdetails from "./Pages/Docdetails/Docdetails";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="doctormeeting" element={<DoctorMeeting />} />
           <Route path="doctordashboard" element={<Docdash/>} />
           <Route path="listofdocs" element={<Listdocs/>} />
+          <Route path="docsdetails" element={<Docdetails/>} />
           <Route path="*" element={<h1>404</h1>} />
         </Routes>
       </BrowserRouter>

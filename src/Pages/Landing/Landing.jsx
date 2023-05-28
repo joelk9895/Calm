@@ -60,8 +60,21 @@ const Landing = () => {
       <div className="signin">
         <button className="login-btn" onClick={handleSignIn}>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu1PJmT_THldF0n5APcmt9p10utgu6KSw4cH2fQ5Xhpw&s" alt="" />
-          <h3>Sign in as client.</h3>
+          <p>Sign in as client.</p>
           
+        </button>
+      </div>
+
+
+
+      <div className="signasdoc">
+        <div className="qn">
+        <h4>Are you a Doctor ?</h4>
+        <h2>Level up your medical practice.Join our Telemedicine revolution!</h2>
+        </div>
+        <button className="gsingn">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu1PJmT_THldF0n5APcmt9p10utgu6KSw4cH2fQ5Xhpw&s" alt="" />
+          <p>Sign In with google</p>
         </button>
       </div>
 
