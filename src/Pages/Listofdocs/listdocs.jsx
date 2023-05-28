@@ -1,118 +1,40 @@
-import React from 'react'
-import "./listdocs.css"
-import Carddoc from '../../components/Carddoc'
+import React, { useEffect, useState } from "react";
+import "./listdocs.css";
+import Carddoc from "../../components/Carddoc";
+import { collection, getDocs, query } from "firebase/firestore";
+import { db } from "../firebase/firebase"; // Replace with your Firebase configuration import
 
-const listdocs = () => {
+const ListDocs = () => {
+  const [feedData, setFeedData] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from Firestore when the component mounts
+    const fetchData = async () => {
+      const q = query(collection(db, "data"));
+      const querySnapshot = await getDocs(q);
+      const data = querySnapshot.docs.map((doc) => doc.data());
+      setFeedData(data);
+      console.log(data);
+    };
+
+    fetchData();
+  }, []);
+
   return (
-    <div className='Doclist'>
+    <div className="Doclist">
+      <div className="ourdocs">
+        <h1>Our Best Doctors.</h1>
+      </div>
 
-        <div className="ourdocs">
-            <h1>Our Best Doctors.</h1>
-        </div>
-        
-        <div className="cards">
-            <div className="filler"></div>
-        <Carddoc
-            name="joel"
-            specialization ="cardiologist"
-            experience ="5"
-        
-        />
-             <Carddoc
-            name="joel"
-            specialization ="cardiologist"
-            experience ="5"
-        
-        />
-
-<Carddoc
-            name="joel"
-            specialization ="cardiologist"
-            experience ="5"
-        
-        />
-<Carddoc
-            name="joel"
-            specialization ="cardiologist"
-            experience ="5"
-        
-        />        
-<Carddoc
-            name="joel"
-            specialization ="cardiologist"
-            experience ="5"
-        
-        />        
-<Carddoc
-            name="joel"
-            specialization ="cardiologist"
-            experience ="5"
-        
-        />    
-<Carddoc
-            name="joel"
-            specialization ="cardiologist"
-            experience ="5"
-        
-        />  
-<Carddoc
-            name="joel"
-            specialization ="cardiologist"
-            experience ="5"
-        
-        />  
-<Carddoc
-            name="joel"
-            specialization ="cardiologist"
-            experience ="5"
-        
-        />  
-<Carddoc
-            name="joel"
-            specialization ="cardiologist"
-            experience ="5"
-        
-        />  
-
-<Carddoc
-            name="joel"
-            specialization ="cardiologist"
-            experience ="5"
-        
-        />  
-<Carddoc
-            name="joel"
-            specialization ="cardiologist"
-            experience ="5"
-        
-        />  
-<Carddoc
-            name="joel"
-            specialization ="cardiologist"
-            experience ="5"
-        
-        />  
-                                                    
-        </div>
-
-
-
-        {/* <div className="card">
-            <div className="forpic">
-
-            </div>
-            <div className="details">
-            <h2>Name</h2>
-            <p>specialization</p>
-            <p>expierience</p>
-            <p>contact</p>
-            </div>
-        </div> */}
-
+      <div className="cards">
+        <div className="filler"></div>
+        {feedData &&
+          feedData.map((data, index) => (
+            <Carddoc key={index} name={data.name} />
+          ))}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default listdocs
-
-
+export default ListDocs;
