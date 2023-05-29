@@ -6,7 +6,7 @@ import numpy as np
 
 from sklearn.preprocessing import StandardScaler
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 app = Flask(__name__)

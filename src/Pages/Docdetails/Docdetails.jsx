@@ -15,7 +15,6 @@ const Docdetails = () => {
     e.preventDefault();
 
     try {
-      // Add data to the "data" collection
       await addDoc(collection(database, "data"), {
         Name: name,
         experience: experience,

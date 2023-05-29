@@ -26,7 +26,6 @@ const DoctorMeeting = () => {
     );
 
     return () => {
-      // Clean up the event listener when the component unmounts
       off(pulseRef);
     };
   }, []);
@@ -36,7 +35,7 @@ const DoctorMeeting = () => {
       <div className="meetinpage">
         <div className="doctormeeting">
           <iframe
-            src="https://us04web.zoom.us/j/73217414937?pwd=2qa8a1uQuuQXZphZPSzZYaa75QefnB.1/meetingsdk"
+            src="https://us04web.zoom.us/j/6511778853?pwd=9pI7nn65LC2G03yF29BsAzMX4LAb6o.1/meetingsdk"
             allow="camera; microphone"
             width={1100}
             height={800}
@@ -47,6 +46,9 @@ const DoctorMeeting = () => {
           <div className="leftdatabar1">
             <h1>Joel</h1>
             {localStorage.getItem("responseml")}
+            <a target="_blank" href="http://localhost:8501" className="calmpdf">
+              Calm PDF
+            </a>
           </div>
           <div className="heartrate sidecar">
             <h3>Heart Rate</h3>

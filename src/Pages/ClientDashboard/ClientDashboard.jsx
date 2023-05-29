@@ -33,14 +33,18 @@ const ClientDashboard = () => {
       <div className="clientdashboard">
         <div className="client">
           <div className="head">
-          <h1>⚕️calm</h1>
+            <h1>⚕️calm</h1>
+            <Link className="Hey" to="/listofdocs">
+              Next
+            </Link>
           </div>
-          <div className="label"><p>Find your best Doctor.</p>
+          <div className="label">
+            <p>Find your best Doctor.</p>
           </div>
           <div className="ai">
             <div className="ai-response">{responseData}</div>
             <form className="ai-form" onSubmit={handleSubmit}>
-              <textarea 
+              <textarea
                 type="textarea"
                 name="prompt"
                 id="ai"
@@ -48,11 +52,9 @@ const ClientDashboard = () => {
                 value={formData.prompt}
                 onChange={handleChange}
               />
+              <div className="next"></div>
               <button type="submit">Submit</button>
             </form>
-            <div className="next">
-          <Link to="/listofdocs"><button>next</button></Link>
-        </div>
           </div>
         </div>
       </div>
