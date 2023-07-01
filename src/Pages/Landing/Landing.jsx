@@ -3,76 +3,10 @@ import "./Landing.css";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { app } from "../firebase/firebase";
 import { useNavigate } from "react-router-dom";
-import { gsap } from "gsap";
-import { useEffect } from "react";
+
 
 const Landing = () => {
-  useEffect(() => {
-    gsap.fromTo(
-      "h1",
-
-      {
-        opacity: 0,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        delay: 0.5,
-      }
-    );
-  }, []);
-  useEffect(() => {
-    gsap.fromTo(
-      "h3",
-
-      {
-        opacity: 0,
-        y: 100,
-        rotateX: 45,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        rotateX: 0,
-        duration: 1,
-        delay: 1,
-      }
-    );
-  }, []);
-  useEffect(() => {
-    gsap.fromTo(
-      ".senti",
-
-      {
-        opacity: 0,
-        scale: 0.8,
-      },
-      {
-        opacity: 1,
-        scale: 1,
-        duration: 1,
-        delay: 2,
-      }
-    );
-  }, []);
-  useEffect(() => {
-    gsap.fromTo(
-      ".signin",
-
-      {
-        opacity: 0,
-        rotateX: 10,
-      },
-      {
-        opacity: 1,
-        rotateX: 0,
-        duration: 1,
-        delay: 3.5,
-      }
-    );
-  }, []);
+ 
   const provider = new GoogleAuthProvider();
 
   const auth = getAuth(app);
